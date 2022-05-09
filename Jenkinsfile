@@ -6,10 +6,10 @@ pipeline {
                     checkout([$class: 'GitSCM', branches: [[name: 'dev']], extensions: [], userRemoteConfigs: [[credentialsId: '698862fd-b5af-4c2b-920c-42ed9ab6ceef', url: 'https://github.com/SilverSky9/final-SDTE.git']]])
                 }
         }
-        stage('echo') {
+        stage('Docker compose') {
             steps {
-                sh "echo Hello"
-                }
+                sh "docker compose up -d"
+            }
         }
     }
 }

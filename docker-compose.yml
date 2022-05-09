@@ -1,6 +1,7 @@
 version: '3'
 services:
-    web:
-      build: .
+    backend:
+      build: ./backend
+      container_name: sdte-backend
       ports:
-        - 8081:80
+        - 3050:3000
