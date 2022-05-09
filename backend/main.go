@@ -1,13 +1,22 @@
 package main
 
-import "github.com/gofiber/fiber"
+import (
+	"sdte-backend/controllers"
+
+	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/cors"
+)
 
 func main() {
 	app := fiber.New()
 
-	app.Get("/health", func(c *fiber.Ctx) {
-		c.Send("go fiber is health")
-	})
+	app.Use(cors.New(cors.Config{
+		AllowOrigins:     "*",
+		AllowHeaders:     "Origin, Content-Type, Accept, Authorization",
+		AllowCredentials: true,
+		AllowMethods:     "GET, POST, PUT, DELETE",
+	}))
 
-	app.Listen(3000)
+	controllers.Route(app)
+	app.Listen(":3000")
 }

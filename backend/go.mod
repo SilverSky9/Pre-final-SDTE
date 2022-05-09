@@ -2,7 +2,11 @@ module sdte-backend
 
 go 1.18
 
-require github.com/gofiber/fiber v1.14.6
+require (
+	github.com/gofiber/fiber v1.14.6
+	github.com/gofiber/fiber/v2 v2.33.0
+	github.com/lib/pq v1.10.5
+)
 
 require (
 	github.com/andybalholm/brotli v1.0.4 // indirect

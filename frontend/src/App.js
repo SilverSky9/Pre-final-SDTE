@@ -1,6 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 import Timer from './page/count'
+import GetAPI from './page/getAPI'
+import axios from 'axios';
+
+axios.defaults.baseURL = 'http://localhost:3050'
+axios.defaults.withCredentials = true
+
 
 function App() {
   return (
@@ -20,6 +26,7 @@ function App() {
         </a>
       </header>
       <Timer/>
+      <GetAPI/>
     </div>
     
   );
