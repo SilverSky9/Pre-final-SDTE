@@ -11,10 +11,5 @@ pipeline {
                 sh "docker -v"
             }
         }
-        stage('Docker compose') {
-            steps {
-                sh "docker compose version"
-            }
-        }
     }
 }
