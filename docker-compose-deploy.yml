@@ -1,0 +1,21 @@
+version: '3'
+services:
+    backend:
+      image: silversky9/sdte-backend:1.0.0
+      container_name: sdte-backend
+      ports:
+        - 3050:3000
+    frontend:
+      image: silversky9/sdte-frontend:1.0.0
+      container_name: sdte-frontend
+      ports:
+      - 8086:80
+    db:
+      image: postgres
+      container_name: sdte-db
+      env_file:
+        - db.env
+      ports:
+      - 5432:5432
+      volumes:
+        - ./db.sql:/docker-entrypoint-initdb.d/db.sql

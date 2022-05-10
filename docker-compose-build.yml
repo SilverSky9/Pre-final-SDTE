@@ -1,0 +1,8 @@
+version: '3'
+services:
+    backend:
+      build: ./backend
+      image: silversky9/sdte-backend:1.0.0
+    frontend:
+      build: ./frontend
+      image: silversky9/sdte-backend:1.0.0
