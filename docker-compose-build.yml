@@ -5,4 +5,4 @@ services:
       image: silversky9/sdte-backend:1.0.0
     frontend:
       build: ./frontend
-      image: silversky9/sdte-backend:1.0.0
+      image: silversky9/sdte-frontend:1.0.0
