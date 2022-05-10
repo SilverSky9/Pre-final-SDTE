@@ -1,6 +1,6 @@
 function timer () {
     const ListItem =  () =>{
-        const number = [1, 2, 3, 4, 5]
+        const number = [1, 2, 3, 4, 6]
         const list = number.map((number) =>
         <li>{number}</li>
         )
