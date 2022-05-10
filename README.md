@@ -11,13 +11,19 @@
 
 ## Deployment
 ### ขั้นตอนการ Build
-Run คำสั่งต่อไปนี้เพื่อ ฺBuild docker image สำหรับ frontend และ backend <br>
-``` docker compose -f docker-compose-build.yml build ```
+Run คำสั่งต่อไปนี้เพื่อ Build docker image สำหรับ frontend และ backend
+``` 
+docker compose -f docker-compose-build.yml build
+```
 
 ### ขั้นตอนการ Deploy
-Run คำสั่งต่อไปนี้เพื่อ Down docker container ก่อนที่จะ Up ขึ่นมาใหม่ สำหรับ frontend และ backend <br>
-``` docker compose -f docker-compose-deploy.yml down ```
+Run คำสั่งต่อไปนี้เพื่อ Down docker container ก่อนที่จะ Up ขึ้นมาใหม่ สำหรับ frontend และ backend
+``` 
+docker compose -f docker-compose-deploy.yml down 
+```
 
-Run คำสั่งต่อไปนี้เพื่อ Up docker container ขึ้นมา สำหรับ frontend และ backend <br>
-``` docker compose -f docker-compose-deploy.yml up -d ```
+Run คำสั่งต่อไปนี้เพื่อ Up docker container ขึ้นมา สำหรับ frontend และ backend
+``` 
+docker compose -f docker-compose-deploy.yml up -d
+```
 
