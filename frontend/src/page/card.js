@@ -1,17 +1,34 @@
-// function card() {
-//   return (
-//     <Card style={{ width: "18rem" }}>
-//       <Card.Body>
-//         <Card.Title>Card Title</Card.Title>
-//         <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-//         <Card.Text>
-//           Some quick example text to build on the card title and make up the
-//           bulk of the card's content.
-//         </Card.Text>
-//         <Card.Link href="#">Card Link</Card.Link>
-//         <Card.Link href="#">Another Link</Card.Link>
-//       </Card.Body>
-//     </Card>
-//   );
-// }
-// export default card()
+import React, { Component } from 'react'
+import axios from "axios";
+import { useEffect, useState } from "react";
+
+function Card() {
+    const [object, setObject] = useState([])
+
+    useEffect(() => {
+        getAPI();
+      }, []);
+      const getAPI = async() => {
+        await axios.get("/data/all").then((res) =>{
+          setObject(res.data)
+        })
+      };
+  return (
+    <div>
+        <h2>คณะที่เปิดรับสมัครอยู่</h2>
+        {object.map((item, index) =>(
+            <div>
+                <h2 key={index}>{item.major_name}</h2>
+                <p key={index}>{item.major}</p>
+                <p key={index}>{item.major_des}</p>
+                <p key={index}>{item.open_date}</p>
+                <button>สมัคร</button>
+                <button>ประกาศสมัคร</button>
+                <button>ข้อมูลเพิ่มเติม</button>
+            </div>
+                    
+                ))}
+    </div>
+  )
+}
+export default Card

@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import Select from 'react-select'
 import axios from "axios";
 import { useEffect, useState } from "react";
 
 function SelectFaculty() {
     const [object, setObject] = useState([])
+    const [round, setRound] = useState([])
 
     useEffect(() => {
         getAPI();
@@ -13,6 +13,9 @@ function SelectFaculty() {
         await axios.get("/faculty/all").then((res) =>{
           setObject(res.data)
           console.log(res.data)
+        })
+        await axios.get("/round/all").then((res) => {
+            setRound(res.data)
         })
       };
 
@@ -26,8 +29,8 @@ function SelectFaculty() {
             </select>
             <h2>เลือกรอบที่ต้องการสมัคร</h2>
             <select>
-                {object.map((item, index) =>(
-                    <option key={index}>{item.faculty_name}</option>
+                {round.map((item, index) =>(
+                    <option key={index}>{item.round_name}</option>
                 ))}
             </select>
             
