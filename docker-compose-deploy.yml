@@ -1,12 +1,12 @@
 version: '3'
 services:
     backend:
-      build: ./backend
+      image: silversky9/sdte-backend:1.0.0
       container_name: sdte-backend
       ports:
         - 3050:3000
     frontend:
-      build: ./frontend
+      image: silversky9/sdte-frontend:1.0.0
       container_name: sdte-frontend
       ports:
       - 8086:80
