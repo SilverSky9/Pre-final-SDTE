@@ -18,12 +18,13 @@ pipeline {
         }
         stage('Packaging') {
             steps {
-                sh "echo Packaging"
+                sh "docker compose -f docker-compose-build.yml build"
             }
         }
         stage('Deploy to target server') {
             steps {
-                sh "echo Deploy to target server"
+                sh "docker compose -f docker-compose-deploy.yml down"
+                sh "docker compose -f docker-compose-deploy.yml up -d"
             }
         }
         stage('API/UI testing') {
