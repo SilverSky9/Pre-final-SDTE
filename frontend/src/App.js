@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Timer from './page/count'
 import GetAPI from './page/getAPI'
@@ -11,7 +10,7 @@ axios.defaults.withCredentials = true
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Hello World!!! and Jenkins
@@ -24,7 +23,7 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
       <Timer/>
       <GetAPI/>
     </div>

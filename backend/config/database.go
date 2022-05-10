@@ -3,12 +3,13 @@ package config
 import (
 	"database/sql"
 	"errors"
-	_ "github.com/lib/pq"
 	"fmt"
+
+	_ "github.com/lib/pq"
 )
 
 const (
-	host = "localhost"
+	host = "sdte-db"
 	port = 5432
 )
 
