@@ -10,6 +10,11 @@
 
 
 ## Deployment
+สามารถเข้าดู Jenkins Pipeline ได้ที่ [128.199.128.171](http://128.199.128.171:8085/) <br>
+```
+User : admin
+Pass : 1234
+```
 ### ขั้นตอนการ Build
 Run คำสั่งต่อไปนี้เพื่อ Build docker image สำหรับ frontend และ backend
 ``` 
