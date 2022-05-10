@@ -36,6 +36,13 @@ func Route(app *fiber.App) {
 		}
 		return c.Status(200).JSON(msg)
 	})
+	app.Get("/data/all", func(c *fiber.Ctx) error {
+		msg, err := services.GetAllData()
+		if err != nil {
+			return c.Status(500).JSON(err.Error())
+		}
+		return c.Status(200).JSON(msg)
+	})
 	// 	person_entry_point := app.Group("/person")
 	// 	PersonRoute(person_entry_point)
 }
